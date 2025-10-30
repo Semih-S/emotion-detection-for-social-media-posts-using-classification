@@ -1,0 +1,83 @@
+/* Navbar container */
+.topnav {
+    background-color: #009DC0; /* Blue background */
+    overflow: hidden; /* Clear floats */
+    display: flex;  
+    align-items: center;       
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  }
+  
+  /* Navbar links */
+  .topnav a {
+    display: flex;  
+    align-items: center;       
+    font-family: 'Open Sans', sans-serif;  /* Custom font */
+    font-size: 20px;                       /* Bigger font size */
+    font-weight: 600;                      /* Slightly bolder text */
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Hover effect */
+  .topnav a:hover {
+    background-color: rgb(1, 53, 109); /* Darker blue on hover */
+    color: white;
+  }
+  
+  /* Active/current page (if needed) */
+  .topnav a.active {
+    background-color: #004494;
+    color: white;
+  }
+  
+  /* Optional: Logo styling if you add a logo image */
+  .topnav a.logo img {
+    height: 60px; /* Adjust as necessary */
+    width: auto;
+  }
+
+  /* Container for the link input bar */
+.link-input {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  /* Styling the form as a flex container */
+  #bluesky-link-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for the input field */
+  #bluesky-link {
+    flex: 1;
+    padding: 15px;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-right: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the submit button */
+  #bluesky-link-form button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    background-color: #009DC0;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover effect for the button */
+  #bluesky-link-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+  }

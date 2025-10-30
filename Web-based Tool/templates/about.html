@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bluesky Post Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="home" class="logo">
+          <img src="{{ url_for('static', filename='Bluesky.jpg') }}" alt="Bluesky Logo">
+        </a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+      </div>
+    <h1>About Page</h1>
+    <p>
+      This website serves as an advanced tool designed exclusively for BlueSky, enabling you to quickly determine whether a post merits your time and engagement. 
+      In an era where social media platforms no longer provide a "dislike" or downvote option, recommendation algorithms can sometimes deliver content that does not align with your preferences. 
+      Furthermore, with the increasing demands on our time, efficient use of social media has become essential.
+      Our tool offers a solution by analyzing the sentiment of a BlueSky post—indicating whether it is predominantly positive or negative—and providing insights through the analysis of popular comments.
+      It classifies posts into three positive emotions (joy, love, and surprise) and three negative emotions (sadness, fear, and anger), enabling you to make informed decisions about whether to read, reply, or simply scroll past a post.
+      Simply paste the link to any BlueSky post that piques your interest, and within seconds, receive a clear, data-driven assessment of its overall sentiment. 
+      This functionality is particularly valuable for posts with extensive text content or lengthy videos, ensuring that your social media experience is both effective and enjoyable.
+      An example use of functionality can be seen below with charts.
+      <img src="{{ url_for('static', filename='pos-neg.png') }}" alt="Positive Negative Chart">
+      <img src="{{ url_for('static', filename='emotion.png') }}" alt="Emotion Chart">
+      <img src="{{ url_for('static', filename='replies_with_emotions.png') }}" alt="Replies with Emotions">
+    </p>
+</body>
+</html>

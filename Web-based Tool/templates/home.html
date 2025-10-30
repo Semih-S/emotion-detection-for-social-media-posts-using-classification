@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bluesky Post Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="{{ url_for('home') }}" class="logo">
+          <img src="{{ url_for('static', filename='Bluesky.jpg') }}" alt="Bluesky Logo">
+        </a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </div>
+    <h1>Home Page</h1>
+    <div class="link-input">
+        <form id="bluesky-link-form" action="{{ url_for('home') }}" method="post">
+          <input 
+            type="text" 
+            id="bluesky-link" 
+            name="bluesky-link" 
+            placeholder="Paste Bluesky Post Link Here" 
+            required>
+          <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Warn the user if the submitted link is not a proper Bluesky post link -->
+    {% if invalid_link %}
+    <div class="error-message">
+        <p>This is not a proper Bluesky post link. Please enter a valid Bluesky post URL.</p>
+    </div>
+    {% endif %}
+
+    {% if pos_neg_plot %}
+    <div class="pos-neg-plot">
+        <h2>Positive vs Negative Sentiment:</h2>
+        <img src="data:image/png;base64,{{ pos_neg_plot }}" alt="Positive vs Negative Sentiment Chart">
+    </div>
+    {% endif %}
+
+    {% if emotion_plot %}
+    <div class="emotion-plot">
+        <h2>Emotion Frequency:</h2>
+        <img src="data:image/png;base64,{{ emotion_plot }}" alt="Emotion Frequency Chart">
+    </div>
+    {% endif %}
+
+
+    <!-- If there are any replies, print them along with their classified emotion -->
+    {% if replies %}
+    <div class="post-thread">
+        <h2>Replies and Emotions:</h2>
+        <ul>
+            {% for reply, emotion in replies %}
+            <li>
+                <p>{{ reply }}<strong> - Classified as: {{ emotion }}</strong></p>
+                
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
